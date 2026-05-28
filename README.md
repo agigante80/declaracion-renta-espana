@@ -1,6 +1,31 @@
 # Declaración de la Renta - España (IRPF 2025)
 
-Skill para Claude / Cowork que asiste al contribuyente español en la revisión, optimización o preparación desde cero de su declaración del Impuesto sobre la Renta de las Personas Físicas (IRPF), ejercicio 2025. Soporta tres modos de trabajo: revisión de borradores existentes, preparación completa a partir de documentación en bruto (nóminas, certificados bancarios, facturas de autónomo, etc.), e híbrido (borrador + datos adicionales).
+> **Fork personal de [joseconti/declaracion-renta-espana](https://github.com/joseconti/declaracion-renta-espana) con 8 mejoras adicionales aplicadas en `main`**. Este fork se mantiene como mirror del upstream + parches propios derivados de uso real de la skill. Todos los parches se proponen también upstream como Pull Requests para beneficio de la comunidad.
+>
+> **Pinned upstream tag**: `v2025-5.0` (27/04/2026)
+> **Patches aplicados**: 8 (ver [`LOCAL-MODIFICATIONS.md`](LOCAL-MODIFICATIONS.md) para detalle)
+> **Estado de PRs upstream**: 8 abiertos contra `joseconti/declaracion-renta-espana` (#8 a #15)
+>
+> ### Lista de mejoras aplicadas en este fork (vs. upstream `v2025-5.0`)
+>
+> | # | Parche | Ficheros modificados | PR upstream |
+> |---|---|---|---|
+> | 1 | Modelo 720 / 721 revision detallada (per-block aggregation, frecuencia anual, sanciones post-Ley 5/2022) | `casos-especiales.md` §5.3 + `preguntas-descubrimiento.md` | [#8](https://github.com/joseconti/declaracion-renta-espana/pull/8) |
+> | 2 | Flujo dual-entry de capital mobiliario extranjero (casillas 0027/0029 + apartado 0588) con cita textual AEAT y caps de CDI | `casos-especiales.md` §5.2 | [#9](https://github.com/joseconti/declaracion-renta-espana/pull/9) |
+> | 3 | Custodia compartida: regla 50/50 obligatoria del minimo descendientes, no transferibilidad, distincion con opcion conjunta + clarificacion pension compensatoria vs anualidades alimentos | `nacional.md` §4.2 + §10.3 + `preguntas-descubrimiento.md` | [#10](https://github.com/joseconti/declaracion-renta-espana/pull/10) (superado por #15) |
+> | 4 | Referencia AEAT Anexo III: topes CDI por pais para dividendos/intereses/canones (con regla del exceso reclamable solo en pais origen) | `casos-especiales.md` §5.4 (nuevo) | [#11](https://github.com/joseconti/declaracion-renta-espana/pull/11) |
+> | 5 | Retribuciones en especie EXENTAS (art. 42.3 LIRPF): tabla de los 9 conceptos exentos con limites cuantitativos (tarjeta restaurante, seguro medico, guarderia, transporte, etc.) | `nacional.md` §5.4.bis (nuevo) | [#12](https://github.com/joseconti/declaracion-renta-espana/pull/12) |
+> | 6 | Perdidas patrimoniales no computables (art. 33.5 LIRPF) y guia practica del apartado "Acciones admitidas a cotizacion" (casillas 0326-0340) | `nacional.md` §9.7 + §9.8 (nuevos) + `preguntas-descubrimiento.md` | [#13](https://github.com/joseconti/declaracion-renta-espana/pull/13) |
+> | 7 | Guia practica de cumplimentacion del apartado "Monedas Virtuales" en Renta Web (casillas 1800-1814) con 6 reglas (agregacion, FIFO, dropdown 1803, conversion EUR, exclusion CFDs, no aplicacion literal art. 33.5.f) | `casos-especiales.md` §2.5 (nuevo) | [#14](https://github.com/joseconti/declaracion-renta-espana/pull/14) |
+> | 8 | Tercer eje en custodia compartida (deducciones autonomicas independientes de opcion conjunta) + regla del donante nominal en donativos (los donativos NO se prorratean por cuenta conjunta como los gastos) | `nacional.md` §4.2 extension + §11.3 (nuevo) | [#15](https://github.com/joseconti/declaracion-renta-espana/pull/15) (extiende #10) |
+>
+> ### Workflow del fork
+>
+> - Todos los parches futuros siguen el mismo patron: **PR contra upstream** (`joseconti/declaracion-renta-espana`) + **merge directo en main** de este fork.
+> - El fork no mantiene branches feature largo plazo. Tras mergear, las branches se borran.
+> - Si upstream mergea uno o varios PRs, este fork se sincronizara con upstream y el parche correspondiente se eliminara de la lista de "aplicados localmente".
+
+---
 
 **Ejercicio fiscal:** 2025 (del 1 de enero al 31 de diciembre de 2025)
 **Campaña de presentación:** del 8 de abril al 30 de junio de 2026
