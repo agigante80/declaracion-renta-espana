@@ -22,8 +22,8 @@
 > ### Workflow del fork
 >
 > - Todos los parches futuros siguen el mismo patron: **PR contra upstream** (`joseconti/declaracion-renta-espana`) + **merge directo en main** de este fork.
-> - El fork no mantiene branches feature largo plazo. Tras mergear, las branches se borran.
-> - Si upstream mergea uno o varios PRs, este fork se sincronizara con upstream y el parche correspondiente se eliminara de la lista de "aplicados localmente".
+> - **Las branches feature se mantienen** en este fork mientras su PR upstream siga abierto. GitHub cierra automaticamente cualquier PR cuya rama HEAD se borra, por lo que las branches solo se eliminan tras el merge o cierre del PR upstream.
+> - Si upstream mergea uno o varios PRs, este fork se sincronizara con upstream, la rama feature correspondiente se borrara y el parche se eliminara de la lista de "aplicados localmente" abajo.
 
 ---
 
